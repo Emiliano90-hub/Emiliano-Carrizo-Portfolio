@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ServicioContactoService {
 
-  private apiUrl = 'https://emilianowebcontacto.infinityfreeapp.com/enviar.php';
+  private apiUrl = 'http://emilianowebcontacto.infinityfreeapp.com/enviar.php';
   constructor(private http: HttpClient) { }
 
   enviarFormulario(data: any) {
