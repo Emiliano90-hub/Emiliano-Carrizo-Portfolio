@@ -1,0 +1,42 @@
+<section id="contacto" tabindex="-1" aria-labelledby="titulo-contacto" class="relative">
+  <app-section-title [id]="'titulo-contacto'" [titulo]="'Contacto'" [type]="'h2'"></app-section-title>
+  <div class="block mt-10">
+    <div class="linea-superior ms-[10%] md:ms-[15%] lg:ms-[20%] xl:ms-[25%] p-10"></div>
+    <div class="max-w-[40rem] m-auto">
+      <form [formGroup]="formularioContacto" (ngSubmit)="enviar()" class="grid grid-cols-1 px-20">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" formControlName="nombre" 
+              class="px-2 py-1 text-black outline-[#002A3A]"
+        />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" formControlName="email" 
+              class="px-2 py-1 text-black outline-[#002A3A]"
+        />
+  
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" formControlName="mensaje"
+              class="h-[150px] px-2 py-1 text-black outline-[#002A3A] resize-none"
+        ></textarea>
+  
+        <button type="submit" class="my-2 bg-[#002A3A] hover:bg-[#001F2F] focus-visible:bg-[#001F2F] transition-colors duration-300 ease-in-out">Enviar</button>
+      </form>
+      <div class="grid grid-cols-1 text-center text-[#FF00FF]">
+        @if (formularioContacto.get('nombre')?.invalid && formularioContacto.get('nombre')?.touched) {
+          <span>El nombre es obligatorio.</span>
+        }
+        @if (formularioContacto.get('email')?.invalid && formularioContacto.get('email')?.touched) {
+          <span>El email es obligatorio.</span>
+        }
+        @if (formularioContacto.get('mensaje')?.invalid && formularioContacto.get('mensaje')?.touched) {
+          <span>El mensaje es obligatorio.</span>
+        }
+        <span [ngClass]="{
+          'text-white': exito,
+        }" class="text-center text-white">{{ enviado }}</span>
+      </div>
+    </div>
+    <div class="linea-inferior me-[10%] md:me-[15%] lg:me-[20%] xl:me-[25%] p-10"></div>
+    <div class="relative h-20 mb-10"></div>
+  </div>
+</section>

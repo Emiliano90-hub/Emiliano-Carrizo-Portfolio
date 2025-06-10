@@ -1,0 +1,76 @@
+.linea-superior, .linea-inferior {
+  position: relative;
+  width: 2rem; 
+  height: 2rem;
+}
+
+.linea-superior::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 8px;
+  background: linear-gradient(90deg, #00F7FF, #FFFFFF, #00F7FF);
+  background-size: 200% 100%;
+  animation: moveGradientH 5s linear infinite;
+}
+
+.linea-superior::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 200%;
+  background: linear-gradient(180deg, #00F7FF, #FFFFFF, #00F7FF);
+  background-size: 100% 200%;
+  animation: moveGradientV 5s linear infinite;
+}
+
+.linea-inferior{
+  position: absolute;
+  right: 0;
+}
+
+.linea-inferior::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  height: 200%;
+  background: linear-gradient(180deg, #FF00FF, #FFFFFF, #FF00FF);
+  background-size: 100% 200%;
+  animation: moveGradientV 5s linear infinite;
+}
+
+.linea-inferior::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200%;
+  height: 8px;
+  background: linear-gradient(90deg, #FF00FF, #FFFFFF, #FF00FF);
+  background-size: 200% 100%;
+  animation: moveGradientH 5s linear infinite;
+}
+
+@keyframes moveGradientH {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes moveGradientV {
+  0% {
+    background-position: 0 200%;
+  }
+  100% {
+    background-position: 0 -200%;
+  }
+}

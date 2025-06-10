@@ -1,0 +1,11 @@
+.formacion::before{
+  content: '';
+  display: inline-block;
+  justify-content: center;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  background-color: #FFFF33;
+  box-shadow: 0 0 5px #FFFF33;
+  margin-right: 5px;
+}

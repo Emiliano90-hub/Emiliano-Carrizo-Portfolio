@@ -1,0 +1,39 @@
+<article class="w-full" [attr.aria-labelledby]="safeId">
+  <h3 [id]="safeId" class="sr-only">{{ titulo }}</h3>
+
+  <details class="group border border-[#FFFF33] shadow-[0_0_5px_#FFFF33] rounded-md p-4">
+    <summary class="cursor-pointer font-semibold flex gap-5 focus:outline-none">
+      <p class="titulo mx-auto text-[clamp(1.2rem,2.5vw,2.2rem)] text-[#FF00FF]">{{ titulo }}</p>
+    </summary>
+
+    <div class="grid grid-cols-3 grid-rows-[auto_auto_auto] text-[clamp(1rem,2.5vw,.8rem)] break-words">
+      <img [src]="img" alt="Imagen del proyecto {{ titulo }}" class="col-span-3 w-40 h-40 mx-auto rounded-md">
+      <div class="col-span-3 text-center">
+        <p class="p-2 md:px-6">{{ descripcion }}</p>
+        <p class="p-2">
+          <strong>Tecnologías:</strong>
+          @for (item of tecnologias; track $index) {
+            {{ item }}
+            @if ($index < tecnologias.length - 1) {
+              -
+            }
+          }
+        </p>
+      </div>
+      <ul class="grid grid-cols-2 col-span-3 ml-5 mb-2 text-center">
+        <li>
+          <a href="https://demo.com" target="_blank" rel="noopener"
+            class="inline-block max-w-fit m-auto text-[#FF00FF] animate-pulse outline-none transition-transform duration-200 ease-in-out focus:scale-125"
+          >Ver demo
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/tuusuario/proyecto" target="_blank" rel="noopener"
+            class="inline-block max-w-fit m-auto text-[#00F7FF] animate-pulse outline-none transition-transform duration-200 ease-in-out focus:scale-125"
+          >Ver código
+          </a>
+        </li>
+      </ul>
+    </div>
+  </details>
+</article>

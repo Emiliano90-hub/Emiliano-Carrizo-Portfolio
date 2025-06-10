@@ -1,0 +1,18 @@
+<section id="proyectos" tabindex="-1" aria-labelledby="titulo-proyectos" class="relative min-h-fit">
+  <app-section-title [id]="'titulo-proyectos'" [titulo]="'Proyectos'" [type]="'h2'"></app-section-title>
+
+  <div class="flex flex-col md:flex-row gap-2 flex-wrap mx-[5%] md:mx-[2%]">
+    <div class="w-[90%] md:w-[45%] mx-auto my-6">
+      <app-proyecto-item 
+                        [titulo]="'ERPLite \(En progreso\)'" 
+                        [descripcion]="'El proyecro esta en progreso'" 
+                        [tecnologias]="['Angular', 'PHP', 'Git', 'Tailwind']"
+                        [img]="'https://portal.edu.gva.es/iesserpis/wp-content/uploads/sites/1045/2023/06/Logo_DAW.jpg'"
+                        >
+      </app-proyecto-item>
+    </div>
+    
+  </div>
+  <!-- Puedes duplicar <article> para más proyectos -->
+
+</section>
