@@ -16,6 +16,7 @@
             "browser": "src/main.ts",
             "outputPath": "dist/emiliano-carrizo-portfolio",
             "index": "src/index.html",
+            "baseHref": "/Emiliano-Carrizo-Portfolio/",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -53,7 +54,8 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "baseHref": "/"
             }
           },
           "defaultConfiguration": "production"

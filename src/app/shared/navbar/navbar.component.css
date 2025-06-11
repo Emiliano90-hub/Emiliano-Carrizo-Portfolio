@@ -1,0 +1,14 @@
+.nav-link {
+  background: linear-gradient(to left, #FFFFFF 50%, #FF00FF 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+  text-decoration: none;
+}
+
+.nav-link:hover, .nav-link:focus   {
+  outline: none;
+  background-position: left bottom;
+}
