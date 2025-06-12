@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ServicioContactoService {
 
-  private apiUrl = 'https://emilianowebcontacto.infinityfreeapp.com/enviar.php';
+  private apiUrl = 'https://backendcontacto.onrender.com/enviar.php';
   constructor(private http: HttpClient) { }
 
   enviarFormulario(data: any): Observable<any> {
